@@ -56,5 +56,5 @@ if validPassword:
 				password.append(i)
 	
 	print "\n","".join(password)
-	raw_input()
+raw_input()
 			
