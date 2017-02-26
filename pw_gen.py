@@ -16,18 +16,29 @@ validPassword = False
 length = int(raw_input("Enter Password Length (6-30): "))
 if length >= 6 and length <= 30:
 	choice_numbers = raw_input("Contain Numbers? Y/N: ")
+	while choice_numbers != "Y" and choice_numbers != "N" and choice_numbers != "y" and choice_numbers != "n":
+		choice_numbers = raw_input("Contain Numbers? Y/N: ")
 	if choice_numbers == "y" or choice_numbers == "Y":
 		cont_numbers = True
 		validPassword = True
+	
 	choice_lowercase = raw_input("Contain Lowercase Letters? Y/N: ")
+	while choice_lowercase != "Y" and choice_lowercase != "N" and choice_lowercase != "y" and choice_lowercase != "n":
+		choice_lowercase = raw_input("Contain Lowercase Letters? Y/N: ")
 	if choice_lowercase == "y" or choice_lowercase == "Y":
 		cont_lowercase = True
 		validPassword = True
+	
 	choice_uppercase = raw_input("Contain Upercase Letters? Y/N: ")
+	while choice_uppercase != "Y" and choice_uppercase != "N" and choice_uppercase != "y" and choice_uppercase != "n":
+		choice_uppercase = raw_input("Contain Upercase Letters? Y/N: ")
 	if choice_uppercase == "y" or choice_uppercase == "Y":
 		cont_uppercase = True
 		validPassword = True
+	
 	choice_characters = raw_input("Contain Special Characters? Y/N: ")
+	while choice_characters != "Y" and choice_characters != "N" and choice_characters != "y" and choice_characters != "n":
+		choice_characters = raw_input("Contain Special Characters? Y/N: ")
 	if choice_characters == "y" or choice_characters == "Y":
 		cont_characters = True
 		validPassword = True
@@ -56,5 +67,7 @@ if validPassword:
 				password.append(i)
 	
 	print "\n","".join(password)
-raw_input()
-			
+	raw_input()
+	log = open("log.txt", "a+")
+	log.write("".join(password)+"\n")
+	log.close()
